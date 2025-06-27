@@ -1,0 +1,3044 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowTech Solutions | Vývoj webových stránek na míru, AI chatboti & automatizace</title>
+    <meta name="description" content="FlowTech Solutions - Vývoj webových stránek na míru, AI chatboti pro zákaznickou podporu, automatizace firemních procesů. Moderní webové technologie React, Next.js. Praha, ČR.">
+    <meta name="keywords" content="vývoj webových stránek na míru, AI chatboti, automatizace procesů, webdesign Praha, React developer, Next.js agentura, firemní automatizace, umělá inteligence">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FlowTech Solutions - Vývoj webových stránek na míru & AI řešení">
+    <meta property="og:description" content="Specializujeme se na vývoj prémiových webových stránek, AI chatboty a automatizaci firemních procesů. Moderní technologie pro váš business.">
+    <meta property="og:image" content="https://flowtech.cz/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flowtech.cz">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FlowTech Solutions - Vývoj webových stránek na míru & AI řešení">
+    <meta name="twitter:description" content="Specializujeme se na vývoj prémiových webových stránek, AI chatboty a automatizaci firemních procesů.">
+    <meta name="twitter:image" content="https://flowtech.cz/og-image.jpg">
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="FlowTech Solutions">
+    <meta name="generator" content="Next.js">
+    <link rel="canonical" href="https://flowtech.cz">
+    <link rel="alternate" hreflang="cs" href="https://flowtech.cz">
+    <link rel="alternate" hreflang="x-default" href="https://flowtech.cz">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "FlowTech Solutions",
+        "description": "Vývoj webových stránek na míru, AI chatboti a automatizace firemních procesů",
+        "url": "https://flowtech.cz",
+        "logo": "https://flowtech.cz/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+420-XXX-XXX-XXX",
+            "contactType": "sales",
+            "availableLanguage": "Czech"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/flowtech-solutions",
+            "https://github.com/flowtech-solutions"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Praha",
+            "addressCountry": "CZ"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "offerCount": "4",
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "Vývoj webových stránek na míru",
+                    "description": "Profesionální webové stránky v React a Next.js"
+                },
+                {
+                    "@type": "Offer", 
+                    "name": "AI chatboti",
+                    "description": "Inteligentní chatboti pro zákaznickou podporu"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Automatizace procesů",
+                    "description": "Automatizace firemních procesů pomocí AI"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "AI školení",
+                    "description": "Firemní školení AI nástrojů"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Domů",
+                "item": "https://flowtech.cz"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Služby",
+                "item": "https://flowtech.cz#services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Portfolio",
+                "item": "https://flowtech.cz#portfolio"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.pexels.com">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Premium Color Scheme */
+            --primary: #0a0a0f;
+            --secondary: #1a1a2e;
+            --accent: #00d4ff;
+            --accent-secondary: #0099cc;
+            --highlight: #ff006e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0c0;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            --gradient-3: linear-gradient(135deg, #ff006e 0%, #8a2387 100%);
+            
+            /* Typography Scale */
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --scale-base: 1rem;
+            --scale-sm: 0.875rem;
+            --scale-md: 1.25rem;
+            --scale-lg: 1.75rem;
+            --scale-xl: 2.5rem;
+            --scale-2xl: 3.5rem;
+            --scale-3xl: 4.5rem;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 5rem;
+            --space-2xl: 8rem;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        /* Ensure text remains visible during webfont load */
+        body {
+            font-display: swap;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Premium Icon Styles */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .icon-large {
+            width: 48px;
+            height: 48px;
+        }
+
+        /* Animated Background Lines - nové! */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+            opacity: 0.1;
+        }
+
+        .bg-line.horizontal {
+            height: 1px;
+            width: 100%;
+            left: -100%;
+            animation: lineSlideHorizontal 8s linear infinite;
+        }
+
+        .bg-line.vertical {
+            width: 1px;
+            height: 100%;
+            top: -100%;
+            animation: lineSlideVertical 6s linear infinite;
+        }
+
+        .bg-line.diagonal {
+            width: 2px;
+            height: 200%;
+            transform: rotate(45deg);
+            top: -100%;
+            left: -100%;
+            animation: lineSlideDiagonal 10s linear infinite;
+        }
+
+        @keyframes lineSlideHorizontal {
+            0% { left: -100%; opacity: 0; }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { left: 100%; opacity: 0; }
+        }
+
+        @keyframes lineSlideVertical {
+            0% { top: -100%; opacity: 0; }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        @keyframes lineSlideDiagonal {
+            0% { transform: rotate(45deg) translate(-100%, -100%); opacity: 0; }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { transform: rotate(45deg) translate(100%, 100%); opacity: 0; }
+        }
+
+        /* Floating Circuit Lines */
+        .circuit-line {
+            position: absolute;
+            background: var(--accent);
+            opacity: 0.05;
+            animation: circuitFlow 15s linear infinite;
+        }
+
+        .circuit-line.horizontal {
+            height: 2px;
+            width: 200px;
+            top: 50%;
+            left: -200px;
+        }
+
+        .circuit-line.vertical {
+            width: 2px;
+            height: 200px;
+            left: 50%;
+            top: -200px;
+        }
+
+        @keyframes circuitFlow {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 0.05; }
+            90% { opacity: 0.05; }
+            100% { transform: translate(100vw, 0); opacity: 0; }
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .preloader-content {
+            text-align: center;
+        }
+        
+        .preloader-logo {
+            font-family: var(--font-display);
+            font-size: var(--scale-2xl);
+            font-weight: 700;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .preloader-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .preloader-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--gradient-2);
+            animation: loading 2s ease-in-out infinite;
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; left: 0; }
+            50% { width: 100%; left: 0; }
+            100% { width: 0%; left: 100%; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: var(--space-md) 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(0);
+            background: linear-gradient(180deg, rgba(10, 10, 15, 0.8) 0%, transparent 100%);
+        }
+        
+        nav.scrolled {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            padding: var(--space-sm) 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                        0 1px 0 rgba(255, 255, 255, 0.1) inset;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--space-md);
+            position: relative;
+        }
+        
+        .nav-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            opacity: 0;
+            filter: blur(50px);
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        nav.scrolled .nav-container::before {
+            opacity: 0.1;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: var(--scale-lg);
+            font-weight: 700;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: url(#logo-gradient);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05) translateY(-1px);
+            filter: drop-shadow(0 10px 20px rgba(0, 212, 255, 0.3));
+        }
+        
+        .logo-icon svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-icon svg {
+            transform: rotate(15deg);
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            padding: var(--space-xs) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--gradient-2);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+        
+        .nav-link .icon {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            margin-right: -8px;
+        }
+        
+        .nav-link:hover .icon {
+            opacity: 1;
+            margin-right: 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            opacity: 0;
+            filter: blur(20px);
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        
+        .nav-link:hover::after {
+            opacity: 0.2;
+        }
+        
+        .nav-cta {
+            background: var(--gradient-2);
+            padding: var(--space-xs) var(--space-lg);
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            border: 2px solid transparent;
+        }
+        
+        .nav-cta::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: rotate(45deg);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.4),
+                        0 5px 15px rgba(0, 212, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-cta:hover::before {
+            top: -50%;
+            left: -50%;
+        }
+        
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 10px;
+            margin: -10px;
+            z-index: 1001;
+            position: relative;
+        }
+        
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 3px;
+        }
+        
+        .hamburger:hover span {
+            background: var(--accent);
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+            background: var(--accent);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+            background: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%);
+        }
+        
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float-particle 20s infinite linear;
+        }
+        
+        @keyframes float-particle {
+            from {
+                transform: translateY(100vh) translateX(0);
+            }
+            to {
+                transform: translateY(-100px) translateX(100px);
+            }
+        }
+        
+        /* 3D Grid Background */
+        .grid-3d {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(500px) rotateX(60deg);
+            animation: grid-move 20s linear infinite;
+        }
+        
+        @keyframes grid-move {
+            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+            100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+        }
+        
+        /* Hero Content */
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 1200px;
+            padding: var(--space-md);
+            animation: hero-entrance 1s ease-out;
+        }
+        
+        @keyframes hero-entrance {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50px;
+            font-size: var(--scale-sm);
+            color: var(--accent);
+            margin-bottom: var(--space-md);
+            animation: badge-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes badge-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.8); }
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(var(--scale-2xl), 8vw, var(--scale-3xl));
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            position: relative;
+        }
+        
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--highlight) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(30deg); }
+        }
+        
+        .hero-title .outline-text {
+            -webkit-text-stroke: 2px var(--accent);
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .hero-subtitle {
+            font-size: var(--scale-md);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fade-in-up 1s ease-out 0.3s forwards;
+        }
+        
+        @keyframes fade-in-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+        
+        /* Hero CTA Buttons */
+        .hero-cta-group {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fade-in-up 1s ease-out 0.6s forwards;
+        }
+        
+        .btn-primary {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--gradient-2);
+            color: var(--primary);
+            font-weight: 600;
+            font-size: var(--scale-base);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            padding: var(--space-sm) var(--space-lg);
+            background: transparent;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: var(--scale-base);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.3s ease;
+        }
+        
+        .btn-secondary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-2);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-3);
+            border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-20px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(20px) rotate(240deg);
+            }
+        }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            opacity: 0;
+            animation: fade-in-up 1s ease-out 1s forwards;
+        }
+        
+        .scroll-indicator-inner {
+            width: 30px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            position: relative;
+        }
+        
+        .scroll-indicator-dot {
+            width: 4px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 2px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-dot 2s ease-in-out infinite;
+        }
+        
+        @keyframes scroll-dot {
+            0%, 100% { top: 10px; opacity: 0; }
+            50% { top: 20px; opacity: 1; }
+        }
+        
+        /* About Section */
+        .about {
+            padding: var(--space-2xl) var(--space-md);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 46, 0.3) 50%, transparent 100%);
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+        
+        .about-content {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .about-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .about-image {
+            position: relative;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease 0.2s;
+        }
+        
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: var(--gradient-2);
+            opacity: 0.1;
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+        
+        .about-image-wrapper:hover::before {
+            transform: rotate(45deg) translate(50%, 50%);
+        }
+        
+        .about-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+        }
+        
+        .about-image-wrapper:hover img {
+            filter: grayscale(0%);
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        
+        .about-stat {
+            text-align: center;
+            padding: var(--space-md);
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .about-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+            border-color: var(--accent);
+        }
+        
+        .about-stat-number {
+            font-family: var(--font-display);
+            font-size: var(--scale-xl);
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .about-stat-label {
+            color: var(--text-secondary);
+            font-size: var(--scale-sm);
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: var(--space-2xl) var(--space-md);
+            position: relative;
+            background: rgba(10, 10, 15, 0.5);
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: var(--space-xs) var(--space-md);
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-2);
+            color: var(--primary);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            background: rgba(26, 26, 46, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .portfolio-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.3);
+            border-color: var(--accent);
+        }
+        
+        .portfolio-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 15, 0.9) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-md);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-overlay-content {
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay-content {
+            transform: translateY(0);
+        }
+        
+        .portfolio-content {
+            padding: var(--space-md);
+        }
+        
+        .portfolio-category {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50px;
+            font-size: var(--scale-sm);
+            color: var(--accent);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .portfolio-title {
+            font-family: var(--font-display);
+            font-size: var(--scale-md);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+        }
+        
+        .portfolio-description {
+            color: var(--text-secondary);
+            font-size: var(--scale-sm);
+            line-height: 1.6;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .portfolio-tech {
+            display: flex;
+            gap: var(--space-xs);
+            flex-wrap: wrap;
+        }
+        
+        .tech-tag {
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+        .services {
+            padding: var(--space-2xl) var(--space-md);
+            position: relative;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 212, 255, 0.05) 50%, transparent 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-xl);
+        }
+        
+        .section-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            background: rgba(255, 0, 110, 0.1);
+            border: 1px solid rgba(255, 0, 110, 0.3);
+            border-radius: 50px;
+            font-size: var(--scale-sm);
+            color: var(--highlight);
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: var(--scale-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-subtitle {
+            font-size: var(--scale-md);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: rgba(26, 26, 46, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: var(--space-lg);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--scale-xl);
+            margin-bottom: var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-icon svg {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+        
+        .service-card:hover .service-icon::after {
+            animation: shine 0.6s ease;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: rotate(45deg) translateY(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(45deg) translateY(100%);
+                opacity: 0;
+            }
+        }
+        
+        .service-title {
+            font-family: var(--font-display);
+            font-size: var(--scale-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+        
+        .service-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+        
+        .service-features {
+            list-style: none;
+        }
+        
+        .service-feature {
+            padding: var(--space-xs) 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: var(--space-md);
+        }
+        
+        .service-feature::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: var(--space-2xl) var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-50%);
+        }
+        
+        .process-line-progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: var(--gradient-2);
+            transition: height 0.3s ease;
+        }
+        
+        .process-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-xl);
+            position: relative;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+        
+        .process-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .process-item:nth-child(even) {
+            flex-direction: row-reverse;
+            transform: translateX(50px);
+        }
+        
+        .process-item:nth-child(even).visible {
+            transform: translateX(0);
+        }
+        
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: var(--scale-lg);
+            font-weight: 700;
+            color: var(--primary);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .process-item.visible .process-number {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.8);
+        }
+        
+        .process-content {
+            width: calc(50% - 60px);
+            padding: var(--space-lg);
+            background: rgba(26, 26, 46, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .process-item:nth-child(odd) .process-content {
+            margin-right: auto;
+        }
+        
+        .process-item:nth-child(even) .process-content {
+            margin-left: auto;
+        }
+        
+        .process-title {
+            font-family: var(--font-display);
+            font-size: var(--scale-md);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+        }
+        
+        .process-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: var(--space-xl) var(--space-md);
+            background: rgba(26, 26, 46, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 50%, rgba(255, 0, 110, 0.1) 0%, transparent 40%);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: var(--space-lg);
+            position: relative;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: var(--scale-2xl);
+            font-weight: 700;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--space-xs);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .stat-number::after {
+            content: attr(data-suffix);
+            font-size: var(--scale-lg);
+            margin-left: 5px;
+        }
+        
+        .stat-label {
+            font-size: var(--scale-base);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Technologies Section */
+        .technologies {
+            padding: var(--space-2xl) var(--space-md);
+            position: relative;
+        }
+        
+        .tech-marquee {
+            overflow: hidden;
+            margin: var(--space-xl) 0;
+        }
+        
+        .tech-track {
+            display: flex;
+            gap: var(--space-xl);
+            animation: marquee 30s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) var(--space-md);
+            background: rgba(26, 26, 46, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            border-color: var(--accent);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+        
+        .tech-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--scale-lg);
+        }
+        
+        .tech-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .tech-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: var(--space-2xl) var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--gradient-1);
+            border-radius: 30px;
+            padding: var(--space-2xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: cta-glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes cta-glow {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.1) rotate(180deg); }
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: var(--scale-2xl);
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-md);
+        }
+        
+        .cta-subtitle {
+            font-size: var(--scale-md);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-xl);
+            background: white;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: var(--scale-base);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            padding: var(--space-xl) var(--space-md) var(--space-md);
+            background: rgba(10, 10, 15, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .footer-column h3 {
+            font-family: var(--font-display);
+            font-size: var(--scale-md);
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+        }
+        
+        .footer-column p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-2);
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+        
+        /* Mobile-specific animations */
+        @media (max-width: 768px) {
+            .nav-menu li {
+                opacity: 0;
+            }
+            
+            .nav-menu.active li {
+                animation: navItemSlide 0.6s ease forwards;
+                opacity: 0;
+            }
+            
+            .nav-menu.active li:nth-child(1) { animation-delay: 0.1s; }
+            .nav-menu.active li:nth-child(2) { animation-delay: 0.2s; }
+            .nav-menu.active li:nth-child(3) { animation-delay: 0.3s; }
+            .nav-menu.active li:nth-child(4) { animation-delay: 0.4s; }
+            .nav-menu.active li:nth-child(5) { animation-delay: 0.5s; }
+            .nav-menu.active li:nth-child(6) { animation-delay: 0.6s; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            :root {
+                --scale-3xl: 3rem;
+                --scale-2xl: 2.5rem;
+                --scale-xl: 2rem;
+                --scale-lg: 1.5rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: var(--space-lg);
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                backdrop-filter: blur(20px);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            @keyframes navItemSlide {
+                from {
+                    opacity: 0;
+                    transform: translateX(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+            
+            .nav-link .icon {
+                opacity: 1;
+                margin-right: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .process-item,
+            .process-item:nth-child(even) {
+                flex-direction: column;
+                transform: none;
+            }
+            
+            .process-content {
+                width: 100%;
+                margin: var(--space-md) 0 !important;
+            }
+            
+            .process-number {
+                position: relative;
+                left: auto;
+                transform: none;
+                margin-bottom: var(--space-md);
+            }
+            
+            .process-line {
+                display: none;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-md);
+            }
+            
+            .stat-number {
+                font-size: var(--scale-xl);
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .about-content {
+                order: 2;
+            }
+            
+            .about-image {
+                order: 1;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-sm);
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+            
+            .portfolio-filters {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: var(--space-xs);
+            }
+        }
+        
+        /* Screen Reader Only Text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        *:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        *:focus:not(:focus-visible) {
+            outline: none;
+        }
+        
+        *:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        
+        /* Skip to Content */
+        .skip-to-content {
+            position: absolute;
+            left: -9999px;
+            z-index: 999;
+            padding: 1em;
+            background: var(--primary);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .skip-to-content:focus {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 10px;
+        }
+        
+        /* Image Loading States */
+        img[loading="lazy"] {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 100%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* High Contrast Mode Support */
+        @media (prefers-contrast: high) {
+            .btn-primary,
+            .btn-secondary,
+            .nav-cta {
+                border: 2px solid currentColor;
+            }
+            
+            .service-card,
+            .portfolio-item {
+                border-width: 2px;
+            }
+        }
+        
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+        @media print {
+            * {
+                background: white !important;
+                color: black !important;
+            }
+            
+            nav,
+            .particles,
+            .grid-3d,
+            .floating-element,
+            .scroll-indicator,
+            .animated-bg {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Content -->
+    <a href="#main" class="skip-to-content">Přeskočit na hlavní obsah</a>
+    
+    <!-- SVG Definitions -->
+    <svg style="display: none;">
+        <defs>
+            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#0099cc;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+    </svg>
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">FlowTech</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Hlavní navigace">
+        <div class="nav-container">
+            <div class="logo" role="img" aria-label="FlowTech Solutions logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm0 2.18l8 4v9.82c0 4.28-2.88 8.36-7 9.68V4.18z"/>
+                        <path d="M12 6L6 9v6c0 3.3 2.1 6.3 5 7.2V12l3-1.5L12 6z" opacity="0.7"/>
+                    </svg>
+                </div>
+                <span>FlowTech</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem">
+                    <svg viewBox="0 0 24 24" class="icon" style="width: 18px; height: 18px;" aria-hidden="true">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+                    </svg>
+                    Domů
+                </a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">
+                    <svg viewBox="0 0 24 24" class="icon" style="width: 18px; height: 18px;" aria-hidden="true">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                    </svg>
+                    O nás
+                </a></li>
+                <li role="none"><a href="#services" class="nav-link" role="menuitem">
+                    <svg viewBox="0 0 24 24" class="icon" style="width: 18px; height: 18px;" aria-hidden="true">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" fill="currentColor"/>
+                    </svg>
+                    Služby
+                </a></li>
+                <li role="none"><a href="#portfolio" class="nav-link" role="menuitem">
+                    <svg viewBox="0 0 24 24" class="icon" style="width: 18px; height: 18px;" aria-hidden="true">
+                        <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z" fill="currentColor"/>
+                    </svg>
+                    Portfolio
+                </a></li>
+                <li role="none"><a href="#process" class="nav-link" role="menuitem">
+                    <svg viewBox="0 0 24 24" class="icon" style="width: 18px; height: 18px;" aria-hidden="true">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                    </svg>
+                    Proces
+                </a></li>
+                <li role="none"><a href="#contact" class="nav-cta" role="menuitem">
+                    <svg viewBox="0 0 24 24" class="icon" style="width: 18px; height: 18px;" aria-hidden="true">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                    </svg>
+                    Kontakt
+                </a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <!-- Particle Background -->
+            <div class="particles" id="particles"></div>
+            
+            <!-- 3D Grid -->
+            <div class="grid-3d"></div>
+            
+            <!-- Floating Elements -->
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px; margin-right: 8px;" aria-hidden="true">
+                        <path d="M13 3L4 14h6v7l9-11h-6z" fill="currentColor"/>
+                    </svg>
+                    Nová éra digitální transformace
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Vývoj webových stránek</span> 
+                    <span class="outline-text">& AI řešení</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Vývoj webových stránek na míru, AI chatboti a automatizace firemních procesů. 
+                    Přetvářáme složité systémy v elegantní řešení pomocí moderních technologií.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn-primary" aria-label="Kontaktujte nás pro nezávaznou konzultaci">Začněme spolupracovat</a>
+                    <a href="#portfolio" class="btn-secondary" aria-label="Prohlédněte si naše projekty">Ukázky projektů</a>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" id="scroll-indicator">
+                <div class="scroll-indicator-inner">
+                    <div class="scroll-indicator-dot"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <!-- Animated Background -->
+            <div class="animated-bg">
+                <div class="bg-line horizontal" style="top: 20%; animation-delay: 0s;"></div>
+                <div class="bg-line horizontal" style="top: 60%; animation-delay: 2s;"></div>
+                <div class="bg-line vertical" style="left: 25%; animation-delay: 1s;"></div>
+                <div class="bg-line vertical" style="left: 75%; animation-delay: 3s;"></div>
+                <div class="bg-line diagonal" style="left: 10%; animation-delay: 4s;"></div>
+                <div class="bg-line diagonal" style="left: 60%; animation-delay: 6s;"></div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-badge">Naše práce</div>
+                <h2 class="section-title">Portfolio projektů</h2>
+                <p class="section-subtitle">
+                    Ukázky webových stránek, AI řešení a automatizací, které jsme vytvořili pro naše klienty
+                </p>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all" aria-label="Zobrazit všechny projekty">Vše</button>
+                <button class="filter-btn" data-filter="web" aria-label="Zobrazit pouze webové projekty">Webové stránky</button>
+                <button class="filter-btn" data-filter="ai" aria-label="Zobrazit pouze AI projekty">AI Chatboti</button>
+                <button class="filter-btn" data-filter="automation" aria-label="Zobrazit pouze automatizace">Automatizace</button>
+            </div>
+            
+            <div class="portfolio-grid" role="list">
+                <article class="portfolio-item" data-category="web" role="listitem">
+                    <div class="portfolio-image">
+                        <span class="sr-only">Screenshot projektu:</span>
+                        <picture>
+                            <source srcset="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" media="(min-width: 768px)">
+                            <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
+                                 alt="Investuj Chytře - transparentní investiční vzdělávání" 
+                                 loading="lazy"
+                                 width="400"
+                                 height="250">
+                        </picture>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-overlay-content">
+                                <a href="https://investujchytre.eu" target="_blank" rel="noopener" class="btn-secondary" aria-label="Zobrazit projekt Investuj Chytře">Zobrazit projekt</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Web Development</span>
+                        <h3 class="portfolio-title">Investuj Chytře - Investiční vzdělávání</h3>
+                        <p class="portfolio-description">
+                            Komplexní webová platforma pro transparentní investiční vzdělávání s pokročilými funkcemi, 
+                            sledováním reálných obchodů a vzdělávacím obsahem pro začínající investory.
+                        </p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">TailwindCSS</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item" data-category="ai" role="listitem">
+                    <div class="portfolio-image">
+                        <picture>
+                            <source srcset="https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" media="(min-width: 768px)">
+                            <img src="https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
+                                 alt="AI chatbot pro zákaznickou podporu" 
+                                 loading="lazy"
+                                 width="400"
+                                 height="250">
+                        </picture>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-overlay-content">
+                                <a href="#" class="btn-secondary" aria-label="Zobrazit detail projektu">Zobrazit projekt</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">AI Solutions</span>
+                        <h3 class="portfolio-title">AI asistent pro zákaznickou podporu</h3>
+                        <p class="portfolio-description">
+                            Inteligentní chatbot schopný odpovídat na složité dotazy, integrovaný s CRM systémem klienta.
+                        </p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">OpenAI GPT-4</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Langchain</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item" data-category="automation" role="listitem">
+                    <div class="portfolio-image">
+                        <picture>
+                            <source srcset="https://images.pexels.com/photos/3861961/pexels-photo-3861961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" media="(min-width: 768px)">
+                            <img src="https://images.pexels.com/photos/3861961/pexels-photo-3861961.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
+                                 alt="Automatizace firemních procesů" 
+                                 loading="lazy"
+                                 width="400"
+                                 height="250">
+                        </picture>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-overlay-content">
+                                <a href="#" class="btn-secondary" aria-label="Zobrazit detail projektu">Zobrazit projekt</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Automation</span>
+                        <h3 class="portfolio-title">Automatizace fakturace a účetnictví</h3>
+                        <p class="portfolio-description">
+                            Kompletní automatizace procesu od vytvoření faktury po zaúčtování, úspora 20 hodin měsíčně.
+                        </p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Make.com</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Webhook</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item" data-category="web" role="listitem">
+                    <div class="portfolio-image">
+                        <picture>
+                            <source srcset="https://images.pexels.com/photos/57007/pexels-photo-57007.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" media="(min-width: 768px)">
+                            <img src="https://images.pexels.com/photos/57007/pexels-photo-57007.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
+                                 alt="SaaS dashboard aplikace" 
+                                 loading="lazy"
+                                 width="400"
+                                 height="250">
+                        </picture>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-overlay-content">
+                                <a href="#" class="btn-secondary" aria-label="Zobrazit detail projektu">Zobrazit projekt</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-category">Web Application</span>
+                        <h3 class="portfolio-title">SaaS platforma pro řízení projektů</h3>
+                        <p class="portfolio-description">
+                            Webová aplikace na míru s real-time synchronizací, pokročilými analytics a týmovou kolaborací.
+                        </p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">WebSocket</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="about" id="about">
+            <!-- Animated Background -->
+            <div class="animated-bg">
+                <div class="circuit-line horizontal" style="top: 30%; animation-delay: 1s;"></div>
+                <div class="circuit-line horizontal" style="top: 70%; animation-delay: 3s;"></div>
+                <div class="circuit-line vertical" style="left: 20%; animation-delay: 2s;"></div>
+                <div class="circuit-line vertical" style="left: 80%; animation-delay: 4s;"></div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-badge">Náš příběh</div>
+                <h2 class="section-title">Kdo jsme a proč nám můžete věřit</h2>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-content">
+                    <h3 class="service-title">Od vášně k inovacím</h3>
+                    <p class="service-description">
+                        FlowTech Solutions vznikla z nadšení pro moderní technologie a touhy pomáhat firmám růst v digitální éře. 
+                        Nejsme jen další IT agentura - jsme tým specialistů, kteří rozumí byznysu a vědí, jak technologie 
+                        využít pro skutečné výsledky.
+                    </p>
+                    <p class="service-description">
+                        Za námi stojí <strong>stovky hodin studia nejnovějších technologií</strong>, desítky úspěšných projektů 
+                        a hlavně - spokojení klienti, kteří s námi dlouhodobě spolupracují. Specializujeme se na 
+                        <strong>vývoj webových stránek na míru</strong> pomocí React a Next.js, tvorbu <strong>AI chatbotů 
+                        pro zákaznickou podporu</strong> a <strong>automatizaci firemních procesů</strong>.
+                    </p>
+                    <p class="service-description">
+                        Věříme, že technologie má sloužit lidem, ne naopak. Proto každé řešení navrhujeme s důrazem na 
+                        jednoduchost použití, efektivitu a měřitelné výsledky. Náš přístup je osobní - každý klient je 
+                        pro nás partner, se kterým budujeme dlouhodobý vztah.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <div class="about-stat-number">1000+</div>
+                            <div class="about-stat-label">Hodin vývoje</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-number">50+</div>
+                            <div class="about-stat-label">AI řešení</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-number">100%</div>
+                            <div class="about-stat-label">Spokojených klientů</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="about-stat-number">24/7</div>
+                            <div class="about-stat-label">Podpora</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <picture>
+                            <source srcset="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" media="(min-width: 768px)">
+                            <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&dpr=1" 
+                                 alt="FlowTech Solutions tým při práci na projektu" 
+                                 loading="lazy"
+                                 width="600"
+                                 height="400">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <!-- Animated Background -->
+            <div class="animated-bg">
+                <div class="bg-line horizontal" style="top: 25%; animation-delay: 0.5s;"></div>
+                <div class="bg-line horizontal" style="top: 75%; animation-delay: 2.5s;"></div>
+                <div class="bg-line vertical" style="left: 30%; animation-delay: 1.5s;"></div>
+                <div class="bg-line vertical" style="left: 70%; animation-delay: 3.5s;"></div>
+                <div class="bg-line diagonal" style="left: 15%; animation-delay: 5s;"></div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-badge">Co děláme</div>
+                <h2 class="section-title">Naše prémiové služby</h2>
+                <p class="section-subtitle">
+                    Kombinujeme nejnovější technologie s hlubokým pochopením byznysu pro vytvoření řešení, která skutečně fungují
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-service="web">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" class="icon-large">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Vývoj webových stránek na míru</h3>
+                    <p class="service-description">
+                        Navrhujeme a vyvíjíme <strong>webové stránky na míru</strong>, které nejen skvěle vypadají, ale především 
+                        plní vaše obchodní cíle. Specializujeme se na <strong>moderní webové aplikace</strong> v React a Next.js.
+                    </p>
+                    <ul class="service-features">
+                        <li class="service-feature">Responzivní design</li>
+                        <li class="service-feature">SEO optimalizace</li>
+                        <li class="service-feature">Rychlé načítání</li>
+                        <li class="service-feature">Moderní technologie</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" data-service="ai">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" class="icon-large">
+                            <path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12zM12 5c.91 0 1.85.05 2.78.14V7.2c-.91-.08-1.83-.13-2.78-.13A6.98 6.98 0 0 0 5.04 13h2.05A4.98 4.98 0 0 1 12 8.04V5z" fill="currentColor"/>
+                            <circle cx="12" cy="13" r="3" fill="currentColor" opacity="0.7"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">AI Chatboti pro zákaznickou podporu</h3>
+                    <p class="service-description">
+                        Vytváříme <strong>inteligentní chatboty s umělou inteligencí</strong>, kteří rozumí vašim zákazníkům 
+                        a poskytují jim okamžitou podporu 24/7. Naše <strong>AI řešení pro firmy</strong> šetří čas a náklady.
+                    </p>
+                    <ul class="service-features">
+                        <li class="service-feature">Přirozená komunikace</li>
+                        <li class="service-feature">Trénování na míru</li>
+                        <li class="service-feature">Integrace s CRM</li>
+                        <li class="service-feature">Vícejazyčná podpora</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" data-service="automation">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" class="icon-large">
+                            <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 2a8 8 0 0 1 8 8 8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8m0 2a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6 6 6 0 0 0-6-6z" fill="currentColor"/>
+                            <path d="M12 8l4 4-4 4-4-4 4-4m0 2.83L10.83 12 12 13.17 13.17 12 12 10.83z" fill="currentColor" opacity="0.7"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Automatizace firemních procesů</h3>
+                    <p class="service-description">
+                        Automatizujeme opakující se procesy pomocí AI a moderních nástrojů. Naše <strong>řešení pro automatizaci 
+                        firemních procesů</strong> vám ušetří desítky hodin týdně a zvýší efektivitu.
+                    </p>
+                    <ul class="service-features">
+                        <li class="service-feature">Workflow automatizace</li>
+                        <li class="service-feature">AI-powered procesy</li>
+                        <li class="service-feature">Integrace systémů</li>
+                        <li class="service-feature">Real-time monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" data-service="training">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" class="icon-large">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">AI Školení</h3>
+                    <p class="service-description">
+                        Naučíme váš tým efektivně využívat AI nástroje a automatizace pro maximální produktivitu
+                    </p>
+                    <ul class="service-features">
+                        <li class="service-feature">Praktické workshopy</li>
+                        <li class="service-feature">Individuální přístup</li>
+                        <li class="service-feature">Hands-on projekty</li>
+                        <li class="service-feature">Certifikace</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Process Section -->
+        <section class="process" id="process">
+            <!-- Animated Background -->
+            <div class="animated-bg">
+                <div class="bg-line horizontal" style="top: 15%; animation-delay: 1s;"></div>
+                <div class="bg-line horizontal" style="top: 85%; animation-delay: 3s;"></div>
+                <div class="bg-line vertical" style="left: 10%; animation-delay: 2s;"></div>
+                <div class="bg-line vertical" style="left: 90%; animation-delay: 4s;"></div>
+                <div class="circuit-line horizontal" style="top: 50%; animation-delay: 0.5s;"></div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-badge">Jak pracujeme</div>
+                <h2 class="section-title">Náš osvědčený proces</h2>
+                <p class="section-subtitle">
+                    Od první konzultace po úspěšné spuštění - každý krok je pečlivě naplánován
+                </p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-line">
+                    <div class="process-line-progress" id="process-progress"></div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">1</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Objevování</h3>
+                        <p class="process-description">
+                            Začínáme důkladnou analýzou vašich potřeb, cílů a současného stavu. Pochopení vašeho byznysu je klíčem k úspěchu.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">2</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Strategie</h3>
+                        <p class="process-description">
+                            Na základě analýzy vytváříme detailní strategii a roadmapu projektu. Každé řešení je šité na míru.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">3</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Vývoj</h3>
+                        <p class="process-description">
+                            Náš tým expertů začíná s implementací. Používáme agilní metodiky a pravidelně vás informujeme o pokroku.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">4</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Testování</h3>
+                        <p class="process-description">
+                            Důkladně testujeme každý aspekt řešení. Kvalita a bezpečnost jsou naší prioritou.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">5</div>
+                    <div class="process-content">
+                        <h3 class="process-title">Spuštění</h3>
+                        <p class="process-description">
+                            Plynulé nasazení do produkce s minimálním dopadem na váš běžný provoz. Jsme s vámi každý krok cesty.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats">
+            <!-- Animated Background -->
+            <div class="animated-bg">
+                <div class="bg-line diagonal" style="left: 5%; animation-delay: 0s;"></div>
+                <div class="bg-line diagonal" style="left: 45%; animation-delay: 2s;"></div>
+                <div class="bg-line diagonal" style="left: 85%; animation-delay: 4s;"></div>
+                <div class="circuit-line vertical" style="left: 25%; animation-delay: 1s;"></div>
+                <div class="circuit-line vertical" style="left: 75%; animation-delay: 3s;"></div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                    <div class="stat-label">Spokojených klientů</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                    <div class="stat-label">Hodin ušetřených automatizací</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                    <div class="stat-label">AI řešení</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+                    <div class="stat-label">Podpora</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technologies Section -->
+        <section class="technologies" id="technologies">
+            <!-- Animated Background -->
+            <div class="animated-bg">
+                <div class="bg-line horizontal" style="top: 30%; animation-delay: 1.5s;"></div>
+                <div class="bg-line horizontal" style="top: 70%; animation-delay: 3.5s;"></div>
+                <div class="bg-line vertical" style="left: 15%; animation-delay: 0.5s;"></div>
+                <div class="bg-line vertical" style="left: 85%; animation-delay: 2.5s;"></div>
+                <div class="circuit-line horizontal" style="top: 50%; animation-delay: 4s;"></div>
+            </div>
+
+            <div class="section-header">
+                <div class="section-badge">Tech Stack</div>
+                <h2 class="section-title">Technologie, které používáme</h2>
+                <p class="section-subtitle">
+                    Pracujeme s nejmodernějšími nástroji a frameworky pro vývoj webových aplikací, 
+                    AI řešení a automatizaci procesů
+                </p>
+            </div>
+            
+            <div class="tech-marquee">
+                <div class="tech-track">
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">OpenAI GPT-4</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9a22.7 22.7 0 0 1-2.4-.36c-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9s-1.17 0-1.71.03c-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03s1.17 0 1.71-.03c.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.4.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68s-1.83 2.93-4.37 3.68c.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68s1.83-2.93 4.37-3.68c-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26s-1.18-1.63-3.28-2.26c-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26s1.18 1.63 3.28 2.26c.25-.76.55-1.51.89-2.26m9 2.26l-.3.51c.31-.05.61-.1.88-.16-.07-.28-.18-.57-.29-.86l-.29.51m-2.89 4.04c1.59 1.5 2.97 2.08 3.59 1.7.64-.35.83-1.82.32-3.96-.77.16-1.58.28-2.4.36-.48.67-.99 1.31-1.51 1.9M8.08 9.74l.3-.51c-.31.05-.61.1-.88.16.07.28.18.57.29.86l.29-.51m2.89-4.04C9.38 4.2 8 3.62 7.37 4c-.63.35-.82 1.82-.31 3.96a22.7 22.7 0 0 1 2.4-.36c.48-.67.99-1.31 1.51-1.9z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">React</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 2L2 19.5h20L12 2zm0 3.18L19.09 18H4.91L12 5.18zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Next.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 2L3.5 6v12L12 22l8.5-4V6L12 2zm0 2.18l6.5 3.07v9.5L12 19.82l-6.5-3.07v-9.5L12 4.18z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Tailwind CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M13 3L4 14h6v7l9-11h-6z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Vercel</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 2a8 8 0 0 1 8 8 8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8m0 2l-4 4 4 4 4-4-4-4z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Make.com</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">n8n</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M7 2v11h3v9l7-12h-4l3-8z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Zapier</span>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1-2.73 2.71-2.73 7.08 0 9.79s7.15 2.71 9.88 0C18.32 15.65 19 14.08 19 12.1h2c0 1.98-.88 4.55-2.64 6.29-3.51 3.48-9.21 3.48-12.72 0-3.5-3.47-3.53-9.11-.02-12.58s9.14-3.47 12.65 0L21 3v7.12z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">OpenAI GPT-4</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9a22.7 22.7 0 0 1-2.4-.36c-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9s-1.17 0-1.71.03c-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03s1.17 0 1.71-.03c.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.4.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68s-1.83 2.93-4.37 3.68c.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68s1.83-2.93 4.37-3.68c-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26s-1.18-1.63-3.28-2.26c-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26s1.18 1.63 3.28 2.26c.25-.76.55-1.51.89-2.26m9 2.26l-.3.51c.31-.05.61-.1.88-.16-.07-.28-.18-.57-.29-.86l-.29.51m-2.89 4.04c1.59 1.5 2.97 2.08 3.59 1.7.64-.35.83-1.82.32-3.96-.77.16-1.58.28-2.4.36-.48.67-.99 1.31-1.51 1.9M8.08 9.74l.3-.51c-.31.05-.61.1-.88.16.07.28.18.57.29.86l.29-.51m2.89-4.04C9.38 4.2 8 3.62 7.37 4c-.63.35-.82 1.82-.31 3.96a22.7 22.7 0 0 1 2.4-.36c.48-.67.99-1.31 1.51-1.9z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">React</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 2L2 19.5h20L12 2zm0 3.18L19.09 18H4.91L12 5.18zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Next.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 2L3.5 6v12L12 22l8.5-4V6L12 2zm0 2.18l6.5 3.07v9.5L12 19.82l-6.5-3.07v-9.5L12 4.18z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Tailwind CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M13 3L4 14h6v7l9-11h-6z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Vercel</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 2a8 8 0 0 1 8 8 8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8m0 2l-4 4 4 4 4-4-4-4z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Make.com</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">n8n</span>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M7 2v11h3v9l7-12h-4l3-8z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="tech-name">Zapier</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta" id="contact">
+            <!-- Animated Background -->
+            <div class="animated-bg">
+                <div class="bg-line horizontal" style="top: 20%; animation-delay: 0s;"></div>
+                <div class="bg-line horizontal" style="top: 80%; animation-delay: 2s;"></div>
+                <div class="bg-line vertical" style="left: 20%; animation-delay: 1s;"></div>
+                <div class="bg-line vertical" style="left: 80%; animation-delay: 3s;"></div>
+                <div class="bg-line diagonal" style="left: 30%; animation-delay: 4s;"></div>
+            </div>
+
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Připraveni na digitální transformaci?</h2>
+                    <p class="cta-subtitle">
+                        Získejte <strong>nezávaznou konzultaci zdarma</strong> a zjistěte, jak můžeme pomocí 
+                        webových technologií a AI automatizace posunout váš byznys na další úroveň.
+                    </p>
+                    <a href="mailto:info@flowtech.cz" class="cta-button" aria-label="Kontaktujte nás pro nezávaznou konzultaci">
+                        Získat konzultaci zdarma
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <!-- Animated Background -->
+        <div class="animated-bg">
+            <div class="circuit-line horizontal" style="top: 25%; animation-delay: 0s;"></div>
+            <div class="circuit-line horizontal" style="top: 75%; animation-delay: 2s;"></div>
+            <div class="circuit-line vertical" style="left: 25%; animation-delay: 1s;"></div>
+            <div class="circuit-line vertical" style="left: 75%; animation-delay: 3s;"></div>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>FlowTech Solutions</h3>
+                    <p>
+                        Mladá firma s drivem, precizností a hlubokým know-how v oblasti moderních webových technologií, AI a automatizace.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" class="icon">
+                                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Služby</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Webové stránky</a></li>
+                        <li><a href="#services">AI Chatboti</a></li>
+                        <li><a href="#services">Automatizace</a></li>
+                        <li><a href="#services">AI Školení</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Společnost</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">O nás</a></li>
+                        <li><a href="#process">Náš proces</a></li>
+                        <li><a href="#technologies">Technologie</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Kontakt</h3>
+                    <ul class="footer-links">
+                        <li>info@flowtech.cz</li>
+                        <li>+420 XXX XXX XXX</li>
+                        <li>Praha, Česká republika</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year">2024</span> FlowTech Solutions. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('loaded');
+            }, 1000);
+        });
+        
+        // Navigation
+        const navbar = document.getElementById('navbar');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        hamburger.addEventListener('click', () => {
+            const isActive = hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive);
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Particles
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 50;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 20) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Create dynamic animated lines
+        function createAnimatedLines() {
+            const sections = document.querySelectorAll('.animated-bg');
+            
+            sections.forEach(section => {
+                // Add random lines with different delays
+                for (let i = 0; i < 3; i++) {
+                    const line = document.createElement('div');
+                    line.className = `bg-line ${Math.random() > 0.5 ? 'horizontal' : 'vertical'}`;
+                    line.style.animationDelay = Math.random() * 8 + 's';
+                    line.style.top = Math.random() * 100 + '%';
+                    line.style.left = Math.random() * 100 + '%';
+                    section.appendChild(line);
+                }
+                
+                // Add diagonal lines
+                for (let i = 0; i < 2; i++) {
+                    const diagonalLine = document.createElement('div');
+                    diagonalLine.className = 'bg-line diagonal';
+                    diagonalLine.style.animationDelay = Math.random() * 10 + 's';
+                    diagonalLine.style.left = Math.random() * 100 + '%';
+                    section.appendChild(diagonalLine);
+                }
+            });
+        }
+
+        // Initialize animated lines
+        createAnimatedLines();
+        
+        // Service Cards Mouse Effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+        
+        // Process Timeline Animation
+        const processItems = document.querySelectorAll('.process-item');
+        const processProgress = document.getElementById('process-progress');
+        
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const processObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Update progress line
+                    const visibleItems = document.querySelectorAll('.process-item.visible').length;
+                    const totalItems = processItems.length;
+                    const progressHeight = (visibleItems / totalItems) * 100;
+                    processProgress.style.height = progressHeight + '%';
+                }
+            });
+        }, observerOptions);
+        
+        processItems.forEach(item => {
+            processObserver.observe(item);
+        });
+        
+        // Stats Counter Animation
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        const countUp = (element) => {
+            const target = parseInt(element.getAttribute('data-target'));
+            const suffix = element.getAttribute('data-suffix') || '';
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        };
+        
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    entry.target.classList.add('counted');
+                    countUp(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statNumbers.forEach(stat => {
+            statsObserver.observe(stat);
+        });
+        
+        // Scroll Indicator
+        document.getElementById('scroll-indicator').addEventListener('click', () => {
+            document.getElementById('services').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        
+        // Dynamic Year
+        document.querySelectorAll('.current-year').forEach(element => {
+            element.textContent = new Date().getFullYear();
+        });
+        
+        // About Section Animation
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        document.querySelectorAll('.about-content, .about-image').forEach(element => {
+            aboutObserver.observe(element);
+        });
+        
+        // Portfolio Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach((item, index) => {
+                    const category = item.getAttribute('data-category');
+                    
+                    if (filter === 'all' || filter === category) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 100);
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('visible');
+                    }
+                });
+            });
+        });
+        
+        // Portfolio Items Animation
+        const portfolioObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        portfolioItems.forEach(item => {
+            portfolioObserver.observe(item);
+        });
+        
+        // Performance Optimization - Debounce scroll events
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(() => {
+                // Handle scroll-based animations here
+            });
+        });
+        
+        // Lazy Loading for Images (when added)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.classList.add('loaded');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
