@@ -1222,6 +1222,66 @@
             line-height: 1.8;
         }
         
+	/* Stats Section */
+        .stats {
+            padding: var(--space-xl) var(--space-md);
+            background: rgba(26, 26, 46, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 50%, rgba(255, 0, 110, 0.1) 0%, transparent 40%);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: var(--space-lg);
+            position: relative;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: var(--scale-2xl);
+            font-weight: 700;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--space-xs);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .stat-number::after {
+            content: attr(data-suffix);
+            font-size: var(--scale-lg);
+            margin-left: 5px;
+        }
+        
+        .stat-label {
+            font-size: var(--scale-base);
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* Services Grid */
         .services-grid {
             display: grid;
@@ -1459,66 +1519,6 @@
         .process-description {
             color: var(--text-secondary);
             line-height: 1.8;
-        }
-        
-        /* Stats Section */
-        .stats {
-            padding: var(--space-xl) var(--space-md);
-            background: rgba(26, 26, 46, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 40%),
-                        radial-gradient(circle at 70% 50%, rgba(255, 0, 110, 0.1) 0%, transparent 40%);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-lg);
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: var(--space-lg);
-            position: relative;
-        }
-        
-        .stat-number {
-            font-family: var(--font-display);
-            font-size: var(--scale-2xl);
-            font-weight: 700;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: var(--space-xs);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .stat-number::after {
-            content: attr(data-suffix);
-            font-size: var(--scale-lg);
-            margin-left: 5px;
-        }
-        
-        .stat-label {
-            font-size: var(--scale-base);
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
         
         /* Technologies Section */
@@ -2294,25 +2294,7 @@
                         jednoduchost použití, efektivitu a měřitelné výsledky. Náš přístup je osobní - každý klient je 
                         pro nás partner, se kterým budujeme dlouhodobý vztah.
                     </p>
-                    
-                    <div class="about-stats">
-                        <div class="about-stat">
-                            <div class="about-stat-number">1000+</div>
-                            <div class="about-stat-label">Hodin vývoje</div>
-                        </div>
-                        <div class="about-stat">
-                            <div class="about-stat-number">50+</div>
-                            <div class="about-stat-label">AI řešení</div>
-                        </div>
-                        <div class="about-stat">
-                            <div class="about-stat-number">100%</div>
-                            <div class="about-stat-label">Spokojených klientů</div>
-                        </div>
-                        <div class="about-stat">
-                            <div class="about-stat-number">24/7</div>
-                            <div class="about-stat-label">Podpora</div>
-                        </div>
-                    </div>
+
                 </div>
                 
                 <div class="about-image">
@@ -2330,6 +2312,37 @@
             </div>
         </section>
         
+	<!-- Stats Section -->
+        <section class="stats">
+            <!-- Animated Background -->
+            <div class="animated-bg">
+                <div class="bg-line diagonal" style="left: 5%; animation-delay: 0s;"></div>
+                <div class="bg-line diagonal" style="left: 45%; animation-delay: 2s;"></div>
+                <div class="bg-line diagonal" style="left: 85%; animation-delay: 4s;"></div>
+                <div class="circuit-line vertical" style="left: 25%; animation-delay: 1s;"></div>
+                <div class="circuit-line vertical" style="left: 75%; animation-delay: 3s;"></div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                    <div class="stat-label">Spokojených klientů</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                    <div class="stat-label">Hodin ušetřených automatizací</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                    <div class="stat-label">AI řešení</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+                    <div class="stat-label">Podpora</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Services Section -->
         <section class="services" id="services">
             <!-- Animated Background -->
@@ -2501,37 +2514,6 @@
                             Plynulé nasazení do produkce s minimálním dopadem na váš běžný provoz. Jsme s vámi každý krok cesty.
                         </p>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Stats Section -->
-        <section class="stats">
-            <!-- Animated Background -->
-            <div class="animated-bg">
-                <div class="bg-line diagonal" style="left: 5%; animation-delay: 0s;"></div>
-                <div class="bg-line diagonal" style="left: 45%; animation-delay: 2s;"></div>
-                <div class="bg-line diagonal" style="left: 85%; animation-delay: 4s;"></div>
-                <div class="circuit-line vertical" style="left: 25%; animation-delay: 1s;"></div>
-                <div class="circuit-line vertical" style="left: 75%; animation-delay: 3s;"></div>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
-                    <div class="stat-label">Spokojených klientů</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="500" data-suffix="+">0</div>
-                    <div class="stat-label">Hodin ušetřených automatizací</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
-                    <div class="stat-label">AI řešení</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="24" data-suffix="/7">0</div>
-                    <div class="stat-label">Podpora</div>
                 </div>
             </div>
         </section>
