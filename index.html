@@ -2008,6 +2008,8 @@
             background: var(--color-border);
             transform: translateY(-50%);
             z-index: 1;
+            opacity: 1;
+            visibility: visible;
         }
 
         .timeline-line-progress {
@@ -2018,12 +2020,15 @@
             background: var(--color-gradient-2);
             width: 0%;
             transition: width 1.5s var(--ease-out-expo);
+            opacity: 1;
+            visibility: visible;
         }
 
         @media (max-width: 968px) {
             .timeline-line {
                 display: block !important;
                 visibility: visible !important;
+                opacity: 1 !important;
                 top: 0;
                 bottom: 0;
                 left: 50%;
@@ -2037,6 +2042,8 @@
                 width: 100% !important;
                 height: 0%;
                 transition: height 1.5s var(--ease-out-expo);
+                opacity: 1 !important;
+                visibility: visible !important;
             }
             
             .process-timeline {
@@ -3576,8 +3583,20 @@
         // Process timeline progress animation
         const processSection = document.querySelector('.process');
         const timelineProgress = document.getElementById('timelineProgress');
+        const timeline = document.querySelector('.timeline-line');
+        
+        // Force timeline visibility immediately
+        if (timeline) {
+            timeline.style.display = 'block';
+            timeline.style.visibility = 'visible';
+            timeline.style.opacity = '1';
+        }
         
         if (processSection && timelineProgress) {
+            // Ensure timeline is visible
+            timelineProgress.style.visibility = 'visible';
+            timelineProgress.style.opacity = '1';
+            
             const animateTimeline = () => {
                 const rect = processSection.getBoundingClientRect();
                 const viewportHeight = window.innerHeight;
@@ -3598,10 +3617,10 @@
                 // Mobile - vertical progress follows viewport center
                 else {
                     // Ensure timeline is visible on mobile
-                    const timeline = document.querySelector('.timeline-line');
                     if (timeline) {
                         timeline.style.display = 'block';
                         timeline.style.visibility = 'visible';
+                        timeline.style.opacity = '1';
                     }
                     
                     // Map viewport center position to timeline
@@ -3621,16 +3640,19 @@
                 }
             };
             
+            // Run immediately on page load
+            animateTimeline();
+            
             // Create scroll observer - only activate when section is partially visible
             const scrollObserver = new IntersectionObserver(
                 (entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             // Force timeline visibility on intersection
-                            const timeline = document.querySelector('.timeline-line');
                             if (timeline && window.innerWidth <= 968) {
                                 timeline.style.display = 'block';
                                 timeline.style.visibility = 'visible';
+                                timeline.style.opacity = '1';
                             }
                             
                             window.addEventListener('scroll', animateTimeline, { passive: true });
@@ -3651,7 +3673,8 @@
                     });
                 },
                 { 
-                    rootMargin: '-20% 0px -20% 0px' // Active only in middle portion of viewport
+                    rootMargin: '-20% 0px -20% 0px', // Active only in middle portion of viewport
+                    threshold: 0
                 }
             );
             scrollObserver.observe(processSection);
