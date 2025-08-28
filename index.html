@@ -102,23 +102,7 @@
             color: var(--color-bg);
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--color-surface);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--color-accent-dim);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--color-accent);
-        }
+        /* Custom Scrollbar - REMOVED */
 
         /* Grain Texture Overlay */
         body::before {
@@ -284,6 +268,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .navbar-logo {
@@ -300,6 +285,48 @@
 
         .navbar-logo:hover {
             color: var(--color-accent);
+        }
+
+        /* Language switcher - navbar desktop */
+        .navbar-lang {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-lang {
+                display: none;
+            }
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .lang-btn.active {
+            color: var(--color-accent);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--color-text);
+        }
+
+        .lang-separator {
+            color: var(--color-text-dim);
+            font-size: 0.75rem;
+            opacity: 0.5;
         }
 
         /* Menu Trigger Button */
@@ -413,6 +440,7 @@
             .menu-content {
                 grid-template-columns: 1fr;
                 padding: 6rem 2rem;
+                padding-bottom: 100px; /* Space for bottom section */
             }
         }
 
@@ -426,7 +454,7 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 0.25rem;
         }
 
         .menu-item {
@@ -439,11 +467,22 @@
             gap: 2rem;
             text-decoration: none;
             color: var(--color-text);
-            padding: 1rem 0;
+            padding: 0.75rem 0;
             position: relative;
             transform: translateY(100%);
             opacity: 0;
             transition: all 0.3s var(--ease-out-expo);
+        }
+
+        @media (max-width: 768px) {
+            .menu-link {
+                padding: 0.6rem 0;
+                gap: 1.5rem;
+            }
+            
+            .menu-link-text {
+                font-size: clamp(2rem, 4vw, 2.5rem);
+            }
         }
 
         .menu-overlay.active .menu-link {
@@ -521,6 +560,121 @@
 
         .menu-contact-item:hover {
             color: var(--color-accent);
+        }
+
+        /* Desktop menu social icons */
+        .menu-contact-socials {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .menu-contact-social {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--color-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .menu-contact-social:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-bg);
+            transform: scale(1.1);
+        }
+
+        /* Mobile menu bottom - fixed */
+        .menu-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.95) 30%);
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        @media (max-width: 968px) {
+            .menu-overlay.active .menu-bottom {
+                display: flex;
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: 0.4s;
+            }
+        }
+
+        /* Language switcher - mobile */
+        .menu-lang {
+            display: flex;
+            background: var(--color-surface);
+            border-radius: 100px;
+            padding: 0.25rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .menu-lang-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            background: transparent;
+            border: none;
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .menu-lang-btn.active {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        .menu-lang-btn:hover:not(.active) {
+            color: var(--color-text);
+        }
+
+        /* Social icons - mobile */
+        .menu-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .menu-social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: all 0.3s var(--ease-out-expo);
+        }
+
+        .menu-social-link:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-bg);
+            transform: translateY(-3px);
         }
 
         /* Hero Section - Enhanced */
@@ -917,11 +1071,18 @@
             width: 48px;
             height: 48px;
             margin-bottom: 1.5rem;
-            color: var(--color-accent);
             font-size: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        
+        .dna-card-icon i {
+            background: var(--color-gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
         }
 
         .dna-card-title {
@@ -1861,17 +2022,30 @@
 
         @media (max-width: 968px) {
             .timeline-line {
+                display: block !important;
+                visibility: visible !important;
                 top: 0;
                 bottom: 0;
                 left: 50%;
+                right: auto;
                 width: 2px;
-                height: 100%;
+                height: calc(100% + 100px);
                 transform: translateX(-50%);
             }
             
             .timeline-line-progress {
-                width: 100%;
+                width: 100% !important;
                 height: 0%;
+                transition: height 1.5s var(--ease-out-expo);
+            }
+            
+            .process-timeline {
+                overflow: visible;
+                padding-bottom: 0;
+            }
+            
+            .process {
+                padding-bottom: 50px;
             }
         }
 
@@ -2116,34 +2290,74 @@
         /* Footer */
         .footer {
             background: var(--color-bg);
-            border-top: 1px solid var(--color-border);
+            border-top: 1px solid var(--color-accent);
             color: var(--color-text);
             position: relative;
+            overflow: hidden;
         }
 
-        .footer-content {
+        /* Animated gradient border */
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--color-gradient-2);
+            animation: footerGradient 10s linear infinite;
+        }
+
+        @keyframes footerGradient {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Footer Top Section with background */
+        .footer-top {
             padding: var(--space-lg) 0;
+            border-bottom: 1px solid var(--color-border);
+            position: relative;
+            background: 
+                linear-gradient(180deg, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?q=80&w=2670&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Dark overlay gradient */
+        .footer-top::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, 
+                rgba(10, 10, 10, 0.4) 0%, 
+                rgba(20, 20, 20, 0.6) 100%
+            );
+            z-index: 1;
+        }
+
+        .footer-top-content {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: var(--space-md);
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: start;
+            position: relative;
+            z-index: 2;
         }
 
         @media (max-width: 968px) {
-            .footer-content {
+            .footer-top-content {
                 grid-template-columns: 1fr;
-                text-align: center;
+                text-align: left;
+                gap: var(--space-md);
             }
         }
 
-        .footer-brand {
+        /* Company Info Column */
+        .footer-about {
             max-width: 400px;
-        }
-
-        @media (max-width: 968px) {
-            .footer-brand {
-                max-width: 100%;
-                margin: 0 auto;
-            }
         }
 
         .footer-logo {
@@ -2153,23 +2367,31 @@
             margin-bottom: 1.5rem;
             display: inline-block;
             letter-spacing: -0.02em;
+            background: var(--color-gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .footer-description {
             color: var(--color-text-muted);
             line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        .footer-column {
+        /* Services Column */
+        .footer-services {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
 
         .footer-column-title {
+            font-family: var(--font-display);
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 1.125rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            color: var(--color-accent);
         }
 
         .footer-links {
@@ -2185,17 +2407,67 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            position: relative;
+        }
+
+        .footer-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 0;
+            height: 1px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
         }
 
         .footer-link:hover {
             color: var(--color-text);
-            transform: translateX(4px);
         }
 
+        .footer-link:hover::before {
+            width: 100%;
+        }
+
+        /* Company Details Column */
+        .footer-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .footer-detail-label {
+            font-size: 0.875rem;
+            color: var(--color-text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-detail-value {
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+
+        /* Footer Bottom Section */
         .footer-bottom {
             padding: 2rem 0;
-            text-align: center;
-            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
         }
 
         .footer-copyright {
@@ -2203,16 +2475,38 @@
             font-size: 0.875rem;
         }
 
-        /* Scroll to Top */
+        .footer-legal-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-legal-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        .footer-legal-link {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color var(--transition-base);
+        }
+
+        .footer-legal-link:hover {
+            color: var(--color-accent);
+        }
+
+        /* Scroll to Top with Progress */
         .scroll-top {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
             width: 56px;
             height: 56px;
-            background: var(--color-gradient-2);
-            color: var(--color-bg);
-            border: none;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -2233,6 +2527,45 @@
 
         .scroll-top:hover {
             transform: translateY(-4px);
+            border-color: var(--color-accent);
+        }
+
+        /* Progress Ring */
+        .scroll-progress-ring {
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 60px;
+            height: 60px;
+            transform: rotate(-90deg);
+        }
+
+        .scroll-progress-bg {
+            fill: none;
+            stroke: var(--color-border);
+            stroke-width: 2;
+            opacity: 0.3;
+        }
+
+        .scroll-progress-fill {
+            fill: none;
+            stroke: url(#scrollGradient);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-dasharray: 170;
+            stroke-dashoffset: 170;
+            transition: stroke-dashoffset 0.3s ease;
+        }
+
+        .scroll-top-icon {
+            font-size: 1.25rem;
+            color: var(--color-text);
+            position: relative;
+            z-index: 2;
+        }
+
+        .scroll-top:hover .scroll-top-icon {
+            color: var(--color-accent);
         }
 
         /* Animation Classes */
@@ -2305,6 +2638,15 @@
             <div class="navbar-container">
                 <a href="#home" class="navbar-logo">WEBX</a>
                 
+                <!-- Language Switcher - Desktop only -->
+                <div class="navbar-lang">
+                    <button class="lang-btn active">CZ</button>
+                    <span class="lang-separator">/</span>
+                    <button class="lang-btn">EN</button>
+                    <span class="lang-separator">/</span>
+                    <button class="lang-btn">SK</button>
+                </div>
+                
                 <!-- Desktop Menu Button -->
                 <button class="menu-trigger" id="menuTrigger">MENU</button>
                 
@@ -2368,7 +2710,67 @@
                     <div class="menu-contact-item">hello@webx.cz</div>
                     <div class="menu-contact-item">+420 123 456 789</div>
                     <div class="menu-contact-item">Praha, Czech Republic</div>
+                    
+                    <!-- Desktop Social Icons -->
+                    <div class="menu-contact-socials">
+                        <a href="https://instagram.com/webxagency" 
+                           class="menu-contact-social" 
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/webx" 
+                           class="menu-contact-social" 
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://dribbble.com/webx" 
+                           class="menu-contact-social" 
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Bottom Section -->
+        <div class="menu-bottom">
+            <!-- Language Switcher -->
+            <div class="menu-lang">
+                <button class="menu-lang-btn active">CZ</button>
+                <button class="menu-lang-btn">EN</button>
+                <button class="menu-lang-btn">SK</button>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="menu-social">
+                <a href="https://instagram.com/webxagency" 
+                   class="menu-social-link" 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/company/webx" 
+                   class="menu-social-link" 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://dribbble.com/webx" 
+                   class="menu-social-link" 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Dribbble">
+                    <i class="fab fa-dribbble"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -2861,7 +3263,92 @@
         </div>
     </section>
 
-    <!-- Other sections would continue here... -->
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-top-content">
+                    <!-- Company Info -->
+                    <div class="footer-about">
+                        <h3 class="footer-logo">WEBX</h3>
+                        <p class="footer-description">
+                            Kreativní digitální agentura specializující se na prémiový webdesign a vývoj. 
+                            Tvoříme digitální zážitky, které posouvají hranice možného.
+                        </p>
+                        <p class="footer-description">
+                            Věříme, že každý projekt je příležitost vytvořit něco výjimečného.
+                        </p>
+                    </div>
+                    
+                    <!-- Services -->
+                    <div class="footer-services">
+                        <h4 class="footer-column-title">Služby</h4>
+                        <ul class="footer-links">
+                            <li><a href="#services" class="footer-link">Web Design</a></li>
+                            <li><a href="#services" class="footer-link">Development</a></li>
+                            <li><a href="#services" class="footer-link">Branding</a></li>
+                            <li><a href="#services" class="footer-link">Motion Design</a></li>
+                            <li><a href="#services" class="footer-link">Performance</a></li>
+                            <li><a href="#services" class="footer-link">Consulting</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Company Details -->
+                    <div class="footer-details">
+                        <h4 class="footer-column-title">Kontakt</h4>
+                        
+                        <div class="footer-detail-item">
+                            <span class="footer-detail-label">Email</span>
+                            <span class="footer-detail-value">hello@webx.cz</span>
+                        </div>
+                        
+                        <div class="footer-detail-item">
+                            <span class="footer-detail-label">Telefon</span>
+                            <span class="footer-detail-value">+420 123 456 789</span>
+                        </div>
+                        
+                        <div class="footer-detail-item">
+                            <span class="footer-detail-label">IČO</span>
+                            <span class="footer-detail-value">123 45 678</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom" style="padding: 0;">
+                    <div class="footer-copyright">
+                        © 2025 WEBX. Všechna práva vyhrazena.
+                    </div>
+                    
+                    <div class="footer-legal-links">
+                        <a href="#" class="footer-legal-link">Obchodní podmínky</a>
+                        <a href="#" class="footer-legal-link">Ochrana osobních údajů</a>
+                        <a href="#" class="footer-legal-link">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top with Progress -->
+    <button class="scroll-top" id="scrollTop">
+        <svg class="scroll-progress-ring" width="60" height="60">
+            <defs>
+                <linearGradient id="scrollGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#5E8BFF;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#B968FF;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <circle class="scroll-progress-bg" cx="30" cy="30" r="27"/>
+            <circle class="scroll-progress-fill" cx="30" cy="30" r="27" id="progressFill"/>
+        </svg>
+        <i class="scroll-top-icon fas fa-arrow-up"></i>
+    </button>
 
     <!-- Scripts -->
     <script>
@@ -2943,10 +3430,15 @@
             document.fonts.ready.then(adjustMorphWidth);
         }
 
-        // Scroll events
+        // Scroll events and Scroll to Top with Progress
         let lastScroll = 0;
+        const scrollTopBtn = document.getElementById('scrollTop');
+        const progressFill = document.getElementById('progressFill');
+        
         const scrollHandler = () => {
             const currentScroll = window.pageYOffset;
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollProgress = (currentScroll / documentHeight) * 100;
 
             // Navbar style on scroll
             if (currentScroll > 100) {
@@ -2955,13 +3447,18 @@
                 navbar.classList.remove('scrolled');
             }
 
-            // Scroll to top button
-            const scrollTopBtn = document.getElementById('scrollTop');
+            // Scroll to top button visibility and progress
             if (scrollTopBtn) {
                 if (currentScroll > 600) {
                     scrollTopBtn.classList.add('visible');
                 } else {
                     scrollTopBtn.classList.remove('visible');
+                }
+                
+                // Update progress ring
+                if (progressFill) {
+                    const dashOffset = 170 - (170 * scrollProgress / 100);
+                    progressFill.style.strokeDashoffset = dashOffset;
                 }
             }
 
@@ -2975,6 +3472,16 @@
         };
 
         window.addEventListener('scroll', scrollHandler, { passive: true });
+
+        // Scroll to top functionality
+        if (scrollTopBtn) {
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -3078,20 +3585,28 @@
                 
                 // Desktop - horizontal progress
                 if (window.innerWidth > 968) {
-                    // Start when section is 30% visible, end when 70% has passed
-                    const startPoint = viewportHeight * 0.7;
-                    const endPoint = -rect.height + viewportHeight * 0.3;
+                    // Start later when section is 50% visible, accelerate progress
+                    const startPoint = viewportHeight * 0.5;
+                    const endPoint = -rect.height + viewportHeight * 0.2;
                     
-                    let progress = (startPoint - rect.top) / (startPoint - endPoint);
+                    // Multiply by 1.4 for faster completion
+                    let progress = ((startPoint - rect.top) / (startPoint - endPoint)) * 1.4;
                     progress = Math.min(Math.max(0, progress), 1);
                     
                     timelineProgress.style.width = `${progress * 100}%`;
                 } 
                 // Mobile - vertical progress follows viewport center
                 else {
+                    // Ensure timeline is visible on mobile
+                    const timeline = document.querySelector('.timeline-line');
+                    if (timeline) {
+                        timeline.style.display = 'block';
+                        timeline.style.visibility = 'visible';
+                    }
+                    
                     // Map viewport center position to timeline
-                    const timelineStart = rect.top + 100; // Start point of timeline
-                    const timelineEnd = rect.bottom - 100; // End point of timeline
+                    const timelineStart = rect.top + 50; // Start point of timeline
+                    const timelineEnd = rect.bottom + 50; // Extended end point
                     
                     if (viewportCenter > timelineStart && viewportCenter < timelineEnd) {
                         let progress = (viewportCenter - timelineStart) / (timelineEnd - timelineStart);
@@ -3111,6 +3626,13 @@
                 (entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
+                            // Force timeline visibility on intersection
+                            const timeline = document.querySelector('.timeline-line');
+                            if (timeline && window.innerWidth <= 968) {
+                                timeline.style.display = 'block';
+                                timeline.style.visibility = 'visible';
+                            }
+                            
                             window.addEventListener('scroll', animateTimeline, { passive: true });
                             animateTimeline(); // Initial call
                         } else {
